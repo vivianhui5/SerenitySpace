@@ -9,6 +9,14 @@ def index():
 @app.route('/calming-exercises')
 def calming_exercises():
     return render_template('calming-exercises.html')
+    
+@app.route('/educational-resources')
+def educational_resources():
+    return render_template('educational-resources.html')
+
+@app.route('/hotlines')
+def hotlines():
+    return render_template('hotlines.html')
 
 
 if __name__ == '__main__':
