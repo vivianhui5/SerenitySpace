@@ -18,6 +18,22 @@ def educational_resources():
 def hotlines():
     return render_template('hotlines.html')
 
+@app.route('/breathing')
+def breathing():
+    return render_template('breathing.html')
+
+@app.route('/grounding')
+def grounding():
+    return render_template('grounding.html')
+
+@app.route('/journaling')
+def journaling():
+    return render_template('journaling.html')
+
+@app.route('/doodling')
+def doodling():
+    return render_template('doodling.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
