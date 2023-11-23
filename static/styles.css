@@ -1,13 +1,23 @@
 #canvas-container {
     border: 2px solid #000;
-    margin: 20px;
-    display: inline-block;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
     padding: 10px; /* Add padding to make the border visible */
     background-color: #f0f0f0;
+    height: 80vh;
+    /* margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px; */
 }
 
 #canvas {
+
     border: 1px solid #000;
-    display: block; /* Ensure canvas takes full width inside the container */
+    /* display: block; Ensure canvas takes full width inside the container */
     background-color: white;
+    width: 100%; /* Take 100% width of the container */
+    height: 100%; /* Take 100% height of the container */
+    box-sizing: border-box; /* Include borders and padding in the element's total width and height */
+
 }

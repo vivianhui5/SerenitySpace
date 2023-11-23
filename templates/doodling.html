@@ -1,7 +1,12 @@
+<!-- doodling.html -->
+
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>doodling</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>doodling</h1>
@@ -17,5 +22,91 @@
     <a href="/doodling">
         <button type="button">doodling</button>
     </a>
+
+    <div id="canvas-container">
+        <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            var drawing = false;
+            var lines = [];
+            var currentLine = [];
+
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+
+            function startDrawing(e) {
+                drawing = true;
+                currentLine = []; // Start a new line
+                addPoint(e.clientX, e.clientY);
+            }
+
+            function draw(e) {
+                if (!drawing) return;
+
+                addPoint(e.clientX, e.clientY);
+                redraw();
+            }
+
+            function stopDrawing() {
+                drawing = false;
+                lines.push(currentLine.slice()); // Save the completed line
+                ctx.beginPath(); // End the current path
+            }
+
+            function addPoint(x, y) {
+                currentLine.push({ x: x - canvas.getBoundingClientRect().left, y: y - canvas.getBoundingClientRect().top });
+            }
+
+            function redraw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+                ctx.lineWidth = 2;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = 'black';
+
+                lines.forEach(line => {
+                    if (line.length >= 2) {
+                        ctx.beginPath();
+                        ctx.moveTo(line[0].x, line[0].y);
+
+                        for (var i = 1; i < line.length; i++) {
+                            ctx.lineTo(line[i].x, line[i].y);
+                        }
+
+                        ctx.stroke();
+                    }
+                });
+
+                // Draw the current line (if any)
+                if (currentLine.length >= 2) {
+                    ctx.beginPath();
+                    ctx.moveTo(currentLine[0].x, currentLine[0].y);
+
+                    for (var i = 1; i < currentLine.length; i++) {
+                        ctx.lineTo(currentLine[i].x, currentLine[i].y);
+                    }
+
+                    ctx.stroke();
+                }
+            }
+
+            // Resize canvas to fit the container
+            function resizeCanvas() {
+                var prevLines = lines.slice(); // Store the previous lines
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = canvas.parentElement.clientHeight;
+                lines = prevLines; // Restore the previous lines
+                redraw();
+            }
+
+            // Call resizeCanvas initially and on window resize
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+        });
+    </script>
 </body>
 </html>
