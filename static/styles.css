@@ -1,0 +1,13 @@
+#canvas-container {
+    border: 2px solid #000;
+    margin: 20px;
+    display: inline-block;
+    padding: 10px; /* Add padding to make the border visible */
+    background-color: #f0f0f0;
+}
+
+#canvas {
+    border: 1px solid #000;
+    display: block; /* Ensure canvas takes full width inside the container */
+    background-color: white;
+}
