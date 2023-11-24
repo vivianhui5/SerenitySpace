@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Journal Board</title>
+</head>
+<body>
+    <h1>Journal Board</h1>
+    <div>
+        {% for entry in entries %}
+            <div class="journal-entry">
+                <p>{{ entry.entry }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- Link styled as a button to go back to the journaling form -->
+    <a href="/journaling" class="button-style">back to journaling</a>
+
+</body>
+</html>

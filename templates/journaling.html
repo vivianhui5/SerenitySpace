@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>journaling</title>
+    <title>Journaling</title>
 </head>
 <body>
-    <h1>journaling</h1>
+    <h1>Journaling</h1>
     <a href="/breathing">
-        <button type="button">breathing</button>
+        <button type="button">Breathing</button>
     </a>
     <a href="/grounding">
-        <button type="button">grounding</button>
+        <button type="button">Grounding</button>
     </a>
     <a href="/journaling">
-        <button type="button">journaling</button>
+        <button type="button">Journaling</button>
     </a>
     <a href="/doodling">
-        <button type="button">doodling</button>
+        <button type="button">Doodling</button>
     </a>
+
+    <!-- Journaling Form -->
+    <form action="/submit_journal" method="post">
+        <label for="journalEntry">Journal Entry:</label><br>
+        <textarea id="journalEntry" name="journalEntry" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="/journal-board" class="button-style">view journal board</a>
 </body>
 </html>
