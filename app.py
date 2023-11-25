@@ -20,12 +20,12 @@ with app.app_context():
     db.create_all()
 
 
-
-
-
-
-
 @app.route('/')
+def loading():
+    return render_template('loading.html')
+
+
+@app.route('/homepage')
 def index():
     return render_template('index.html')
 
@@ -68,8 +68,16 @@ def submit_journal():
 
 @app.route('/journal-board')
 def journal_board():
-    all_entries = JournalEntry.query.all()
-    return render_template('journal-board.html', entries=all_entries)
+    entries = JournalEntry.query.order_by(JournalEntry.id.desc()).all()
+    return render_template('journal-board.html', entries=entries)
+
+
+@app.route('/delete_journal/<int:entry_id>', methods=['POST'])
+def delete_journal(entry_id):
+    entry_to_delete = JournalEntry.query.get_or_404(entry_id)
+    db.session.delete(entry_to_delete)
+    db.session.commit()
+    return redirect(url_for('journal_board'))
 
 
 

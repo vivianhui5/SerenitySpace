@@ -2,27 +2,118 @@
 <html>
 <head>
     <title>Journaling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8eae6; /* Soft beige background */
+            padding: 20px;
+            text-align: center;
+        }
+        label {
+            color: #5a836e; /* Sage green color to match headers */
+            font-family: 'Arial', sans-serif;
+            font-size: 1em; /* Adjust the size as needed */
+            margin-bottom: 10px; /* Space below the label */
+        }
+
+        h5 {
+            color: #5a836e; /* Sage green, consistent with the theme */
+            font-family: 'Arial', sans-serif;
+            margin-top: 20px; /* Space above the heading */
+            margin-bottom: 10px; /* Space below the heading */
+        }
+
+        h1 {
+            color: #5a836e; /* Sage green for headers */
+        }
+
+        a button, .button-style, input[type=submit] {
+            background-color: #a1c9af; /* Muted sage green button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        a button:hover, .button-style:hover, input[type=submit]:hover {
+            background-color: #89b09c;
+        }
+
+        textarea {
+            background-color: #c8e6c9; /* Light sage green for sticky note style */
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            width: 300px; /* Adjust width as needed */
+            height: 150px; /* Adjust height as needed */
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type=submit] {
+            /* Other button styles */
+            margin-top: 20px; /* Add space above the submit button */
+            width: auto; /* Default width based on content */
+            max-width: 200px; /* Maximum width */
+            display: block; /* Make the input a block element */
+            margin-left: auto; /* These two margins */
+            margin-right: auto; /* Center the button horizontally */
+        }
+
+
+        .button-style {
+            /* Other link button styles */
+            background-color: #a1c9af; /* Muted sage green button */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block; /* Change from block to inline-block */
+            margin-top: 20px;
+            width: 200px; /* Set a specific width */
+            margin-left: auto; /* Center the button */
+            margin-right: auto; /* Center the button */
+        }
+
+    </style>
 </head>
+
 <body>
-    <h1>Journaling</h1>
     <a href="/breathing">
-        <button type="button">Breathing</button>
+        <button type="button">breathing</button>
     </a>
     <a href="/grounding">
-        <button type="button">Grounding</button>
+        <button type="button">grounding</button>
     </a>
     <a href="/journaling">
-        <button type="button">Journaling</button>
+        <button type="button">journaling</button>
     </a>
     <a href="/doodling">
-        <button type="button">Doodling</button>
+        <button type="button">doodling</button>
     </a>
+
+    <h1>journaling</h1>
+    <h5>express your thoughts freely here...  </h5>
+    
+    
 
     <!-- Journaling Form -->
     <form action="/submit_journal" method="post">
-        <label for="journalEntry">Journal Entry:</label><br>
+        <label for="journalEntry">journal entry:</label>
         <textarea id="journalEntry" name="journalEntry" rows="4" cols="50"></textarea><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="submit">
     </form>
     <a href="/journal-board" class="button-style">view journal board</a>
 </body>
