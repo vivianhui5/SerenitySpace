@@ -1,0 +1,48 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8eae6; /* Soft beige background */
+    text-align: center; /* Center align everything */
+    padding: 20px; /* Padding around the body */
+    color: #3e4c59; /* Earthy text color */
+}
+
+h1 {
+    color: #5a836e; /* Sage green for headers */
+    margin-bottom: 30px; /* Space below the heading */
+}
+
+/* Button Container */
+.buttons-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center buttons horizontally */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 10px; /* Space between buttons */
+}
+
+/* Button Styles */
+a button {
+    background-color: #a1c9af; /* Muted sage green button */
+    color: white; /* White text for contrast */
+    border: none; /* Remove default border */
+    padding: 15px 30px; /* Adequate padding for comfort */
+    border-radius: 5px; /* Rounded corners for a softer look */
+    cursor: pointer; /* Cursor changes to indicate it's clickable */
+    font-size: 1em; /* Adequate text size */
+    width: 30%; /* Buttons take up roughly 1/3 of the container width */
+    max-width: 300px; /* Maximum width of buttons */
+    min-width: 200px; /* Minimum width of buttons */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    height: 100px; /* Fixed height for all buttons */
+}
+
+/* Button Hover State */
+a button:hover {
+    background-color: #89b09c; /* Slightly darker shade for hover state */
+}
+
+
+a {
+    text-decoration: none;
+}

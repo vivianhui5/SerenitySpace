@@ -2,37 +2,8 @@
 <html>
 <head>
     <title>Loading</title>
-
-    <!-- CSS styles -->
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .typing {
-            font-family: monospace;
-            font-size: 24px;
-            border-right: 3px solid; /* Simulates the cursor */
-            white-space: nowrap;
-            overflow: hidden;
-            width: 0;
-            animation: typing 3s steps(14) 0.5s forwards, blink-caret .5s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 14ch; } /* ch units refer to the width of the character '0' */
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: black }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="static\loading.css">
+ 
 
     <!-- JavaScript -->
     <script type="text/javascript">

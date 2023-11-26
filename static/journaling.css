@@ -1,0 +1,139 @@
+/* General Element Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8eae6; /* Soft beige background */
+    padding: 20px;
+    color: #3e4c59; /* Earthy text color */
+    text-align: center;
+}
+
+h1, h5 {
+    color: #5a836e; /* Sage green for headers */
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+h1 {
+    text-align: center;
+}
+
+h5 {
+    margin-top: 20px; /* Space above the heading */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Button Styles */
+a button {
+    background-color: #a1c9af; /* Muted sage green button */
+    color: white; /* White text for contrast */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Adequate padding for comfort */
+    margin: 5px; /* Margin around buttons */
+    border-radius: 5px; /* Rounded corners for a softer look */
+    cursor: pointer; /* Cursor changes to indicate it's clickable */
+    font-family: Arial, sans-serif; /* Consistent font with the theme */
+    font-size: 1em; /* Adequate text size */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Button Hover State */
+a button:hover {
+    background-color: #89b09c; /* Slightly darker shade for hover state */
+}
+
+
+label {
+    color: #5a836e; /* Sage green color to match headers */
+    font-size: 1em; /* Adjust the size as needed */
+    margin-bottom: 10px; /* Space below the label */
+    display: block;
+}
+
+textarea {
+    background-color: #c8e6c9; /* Light sage green for sticky note style */
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    width: 300px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}
+
+/* Form and Button Styles */
+form {
+    margin-top: 20px;
+}
+
+input[type=submit], .button-style {
+    background-color: #a1c9af; /* Muted sage green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block; /* Make the input a block element */
+    margin-left: auto; /* Center the button */
+    margin-right: auto; /* Center the button */
+    margin-top: 20px; /* Add space above the submit button */
+    width: auto; /* Default width based on content */
+    max-width: 200px; /* Maximum width */
+}
+
+/* Hover States */
+a button:hover, .button-style:hover, input[type=submit]:hover {
+    background-color: #89b09c;
+}
+
+/* Specific Class Styles */
+.journal-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between notes */
+    margin-top: 20px;
+}
+
+.journal-entry {
+    background-color: #c8e6c9; /* Light sage green for sticky notes */
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    border-radius: 10px;
+    overflow: auto;
+    word-wrap: break-word;
+    font-size: 0.9em; /* Slightly smaller font size */
+    position: relative; /* Needed for absolute positioning of the button */
+}
+
+.delete-btn {
+    background: #f8c6d1; /* Pastel pink background for visibility */
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px; /* Move to the top */
+    right: 10px; /* Place it on the right corner */
+    border: none;
+    font-size: 20px;
+    z-index: 2; /* Ensure it's above other content */
+}
+
+.delete-btn:hover {
+    background-color: #e09fa7;
+}
+
+.delete-form {
+    margin: 0; /* Remove any default margin */
+}
