@@ -45,59 +45,32 @@ a button:hover {
     background-color: #89b09c; /* Slightly darker shade for hover state */
 } 
 
-div {
-    font-family: Arial, sans-serif;
-    background-color: #e8eae6;
-    padding: 20px;
-    color: #3e4c59;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+#undoButton {
+    background-color: #a1c9af; /* Muted sage green button */
+    color: white; /* White text for contrast */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Adequate padding for comfort */
+    margin: 5px; /* Margin around buttons */
+    border-radius: 5px; /* Rounded corners for a softer look */
+    cursor: pointer; /* Cursor changes to indicate it's clickable */
+    font-family: Arial, sans-serif; /* Consistent font with the theme */
+    font-size: 1em; /* Adequate text size */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-#container {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 60%; /* Center vertically by moving 50% from the top */
-    left: 50%; /* Center horizontally by moving 50% from the left */
-    transform: translate(-50%, -50%); /* Center using a transform */
+/* Button Hover State */
+#undoButton:hover {
+    background-color: #89b09c; /* Slightly darker shade for hover state */
+} 
+
+#canvas-container {
+    border: 2px solid #5a836e; /* Border color for the doodling area */
+    box-sizing: border-box; /* Include border in the width and height calculations */
+    overflow: hidden; /* Hide overflow content (e.g., lines outside the border) */
 }
 
-#breath {
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
-    background-color: #87CEEB;
-    position: absolute;
-    animation: breathe-in-out 6s infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    color: #fff;
-}
-
-.breathe-message {
-    display: block;
-}
-
-@keyframes breathe-in-out {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.5);
-        opacity: 1;
-    }
+canvas {
+    width: 100%; /* Make the canvas fill its container */
+    height: 100%; /* Make the canvas fill its container */
 }

@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>doodling</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="static\doodling.css">
 </head>
 <body>
-    <h1>doodling</h1>
+    <a href="/homepage">
+        <h1>serenityspace</h1>
+    </a>
     <a href="/breathing">
         <button type="button">breathing</button>
     </a>
@@ -20,14 +22,18 @@
     <a href="/doodling">
         <button type="button">doodling</button>
     </a>
+    <a href="/educational-resources">
+        <button type="button">resources</button>
+    </a>
 
+    <h1>doodling</h1>
     <label for="colorPicker">Pen Color:</label>
     <input type="color" id="colorPicker" value="#000000">
     
     <button id="undoButton">Undo</button>
     
     <div id="canvas-container">
-        <canvas id="canvas" width="800" height="600"></canvas>
+        <canvas id="canvas" width="800" height="500"></canvas>
     </div>
 
     <script>

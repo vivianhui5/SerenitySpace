@@ -24,30 +24,30 @@ with app.app_context():
 def loading():
     return render_template('loading.html')
 
-
 @app.route('/homepage')
 def index():
     return render_template('index.html')
-
-@app.route('/calming-exercises')
-def calming_exercises():
-    return render_template('calming-exercises.html')
     
 @app.route('/educational-resources')
 def educational_resources():
     return render_template('educational-resources.html')
 
-@app.route('/hotlines')
-def hotlines():
-    return render_template('hotlines.html')
-
 @app.route('/breathing')
 def breathing():
     return render_template('breathing.html')
 
-@app.route('/grounding')
+@app.route('/grounding', methods=["GET", "POST"])
 def grounding():
-    return render_template('grounding.html')
+    if request.method == "POST":
+        response1 = request.form.get("see")
+        response2 = request.form.get("touch")
+        response3 = request.form.get("hear")
+        response4 = request.form.get("smell")
+        response5 = request.form.get("taste")
+        print(response1, response2, response3, response4, response5)
+        return render_template("grounded.html", response1=response1, response2=response2, response3=response3, response4=response5, response5=response5)
+    else:
+        return render_template('grounding.html')
 
 @app.route('/journaling')
 def journaling():

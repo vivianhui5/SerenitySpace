@@ -7,7 +7,7 @@ body {
     text-align: center;
 }
 
-h1, h5 {
+h1, h4, h5 {
     color: #5a836e; /* Sage green for headers */
     font-family: 'Arial', sans-serif;
     margin-bottom: 10px; /* Space below the heading */
@@ -19,6 +19,11 @@ h1 {
 
 h5 {
     margin-top: 0px; /* Space above the heading */
+}
+
+h4 {
+    text-align: left;
+    font-size: 25px;
 }
 
 a {
@@ -48,56 +53,13 @@ a button:hover {
 div {
     font-family: Arial, sans-serif;
     background-color: #e8eae6;
-    padding: 20px;
+    padding: 0px;
     color: #3e4c59;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
-}
-
-#container {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 60%; /* Center vertically by moving 50% from the top */
-    left: 50%; /* Center horizontally by moving 50% from the left */
-    transform: translate(-50%, -50%); /* Center using a transform */
-}
-
-#breath {
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
-    background-color: #87CEEB;
-    position: absolute;
-    animation: breathe-in-out 6s infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    color: #fff;
-}
-
-.breathe-message {
-    display: block;
-}
-
-@keyframes breathe-in-out {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.5);
-        opacity: 1;
-    }
+    margin: 0px; /* Adjusted margin */
+    border-radius: 10px; /* Added border-radius for a rounded look */
 }
