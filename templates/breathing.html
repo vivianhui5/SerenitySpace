@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>breathing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static\breathing.css">
+    <title>Breathing Exercise</title>
 </head>
+
 <body>
-    <h1>breathing</h1>
     <a href="/breathing">
         <button type="button">breathing</button>
     </a>
@@ -17,5 +19,34 @@
     <a href="/doodling">
         <button type="button">doodling</button>
     </a>
+
+    <h1>breathing</h1>
+    <h5>take a deep breath — in and out, in and out.</h5>
+
+    <div id="container">
+        <div id="breath">
+            <span class="breathe-message">Breathe In</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleBreatheMessage() {
+            const breatheMessage = document.querySelector('.breathe-message');
+
+            if (breatheMessage.innerText === 'Breathe In') {
+                breatheMessage.innerText = 'Breathe Out';
+            } else {
+                breatheMessage.innerText = 'Breathe In';
+            }
+        }
+
+        function changeBreatheMessage() {
+            toggleBreatheMessage();
+            setTimeout(changeBreatheMessage, 3000); // Change every 3 seconds
+        }
+
+        // Initial call to start the loop
+        setTimeout(changeBreatheMessage, 3000);
+    </script>
 </body>
 </html>
