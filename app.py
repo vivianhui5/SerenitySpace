@@ -15,7 +15,24 @@ class JournalEntry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     entry = db.Column(db.Text)
 
-    
+class DoodleEntry(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    data = db.Column(db.Text)  # Stores doodle data as JSON string
+
+def clear_doodle_entries():
+    """Clear all entries in the DoodleEntry table."""
+    try:
+        db.session.query(DoodleEntry).delete()
+        db.session.commit()
+    except Exception as e:
+        print("Error clearing DoodleEntry table:", e)
+        db.session.rollback()
+
+with app.app_context():
+    db.create_all()
+    clear_doodle_entries()  # Clear the table when the app starts
+
+
 with app.app_context():
     db.create_all()
 
@@ -53,9 +70,6 @@ def grounding():
 def journaling():
     return render_template('journaling.html')
 
-@app.route('/doodling')
-def doodling():
-    return render_template('doodling.html')
 
 @app.route('/submit_journal', methods=['POST'])
 def submit_journal():
@@ -79,7 +93,26 @@ def delete_journal(entry_id):
     db.session.commit()
     return redirect(url_for('journal_board'))
 
+@app.route('/doodling')
+def doodling():
+    return render_template('doodling.html')
 
+@app.route('/submit_doodle', methods=['POST'])
+def submit_doodle():
+    doodle_data = request.form['doodleData']
+    new_doodle = DoodleEntry(data=doodle_data)
+    db.session.add(new_doodle)
+    db.session.commit()
+    print("hi")
+    return redirect(url_for('sketches'))
+
+
+@app.route('/sketches')
+def sketches():
+    doodles = DoodleEntry.query.order_by(DoodleEntry.id.desc()).all()
+    for doodle in doodles:
+        print(doodle.id, doodle.data)  # This will print the id and the data of each doodle
+    return render_template('sketches.html', doodles=doodles)
 
 
 if __name__ == '__main__':

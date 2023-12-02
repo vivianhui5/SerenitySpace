@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Journal Board</title>
-    <link rel="stylesheet" type="text/css" href="static\journaling.css">
-    
-</head>
-<body>
+{% extends "layout.html" %}
+
+{% block title %}
+    Journal Board
+{% endblock %}
+
+{% block body %}
     <h1>Journal Board</h1>
     <div class="journal-board">
         {% for entry in entries %}
@@ -20,5 +19,4 @@
         {% endfor %}
     </div>
     <a href="/journaling" class="button-style">Back to Journaling</a>
-</body>
-</html>
+{% endblock %}

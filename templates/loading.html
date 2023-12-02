@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Loading</title>
-    <link rel="stylesheet" type="text/css" href="static\loading.css">
- 
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="static\styles.css">
+        <title>serenityspace: {% block title %}{% endblock %}</title>
 
-    <!-- JavaScript -->
-    <script type="text/javascript">
-        setTimeout(function(){
-            window.location.href = "{{ url_for('index') }}";
-        }, 5000);
-    </script>
-</head>
-<body>
-    <div class="typing">serenityspace</div>
-</body>
+        <!-- JavaScript -->
+        <script type="text/javascript">
+            setTimeout(function(){
+                window.location.href = "{{ url_for('index') }}";
+            }, 4800);
+        </script>
+    </head>
+
+    <body>
+        <div id="container1">
+            <div class="typing-container">
+                <span class="typing1">serenityspace</span>
+            </div>
+        </div>
+    </body>
 </html>
+

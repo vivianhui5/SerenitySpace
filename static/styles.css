@@ -1,23 +1,368 @@
-#canvas-container {
-    border: 2px solid #000;
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    padding: 10px; /* Add padding to make the border visible */
-    background-color: #f0f0f0;
-    height: 80vh;
-    /* margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px; */
+/* General Element Styles */
+body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #e8eae6; /* Soft beige background */
+    color: #3e4c59; /* Earthy text color */
+    text-align: center;
 }
 
-#canvas {
+h1, h4, h5 {
+    color: #5a836e; /* Sage green for headers */
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px; /* Space below the heading */
+}
 
-    border: 1px solid #000;
-    /* display: block; Ensure canvas takes full width inside the container */
-    background-color: white;
-    width: 100%; /* Take 100% width of the container */
-    height: 100%; /* Take 100% height of the container */
-    box-sizing: border-box; /* Include borders and padding in the element's total width and height */
+h4 {
+    font-size: 18px;
+    margin-bottom:25px;
+}
 
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+ }
+
+h5 {
+    margin-top: 0px; /* Space above the heading */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Button Styles */
+a button {
+    background-color: #a1c9af; /* Muted sage green button */
+    color: white; /* White text for contrast */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Adequate padding for comfort */
+    margin: 5px; /* Margin around buttons */
+    border-radius: 5px; /* Rounded corners for a softer look */
+    cursor: pointer; /* Cursor changes to indicate it's clickable */
+    font-family: Arial, sans-serif; /* Consistent font with the theme */
+    font-size: 1em; /* Adequate text size */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Button Hover State */
+a button:hover {
+    background-color: #89b09c; /* Slightly darker shade for hover state */
+} 
+
+div {
+    height: 100%;
+    overflow:hidden;
+    font-family: Arial, sans-serif;
+    background-color: #e8eae6;
+    color: #3e4c59;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+#container {
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+}
+
+/* breathing.html */
+#breath {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    background-color: #87CEEB;
+    position: absolute;
+    animation: breathe-in-out 6s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+.breathe-message {
+    display: block;
+}
+
+@keyframes breathe-in-out {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
+
+/* journaling.html and journalboard.html */
+label {
+    color: #5a836e; /* Sage green color to match headers */
+    font-size: 1em; /* Adjust the size as needed */
+    margin-bottom: 10px; /* Space below the label */
+    display: block;
+}
+
+textarea {
+    background-color: #c8e6c9; /* Light sage green for sticky note style */
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    width: 300px; /* Adjust width as needed */
+    height: 150px; /* Adjust height as needed */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type=submit], .button-style {
+    background-color: #a1c9af; /* Muted sage green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block; /* Make the input a block element */
+    margin-left: auto; /* Center the button */
+    margin-right: auto; /* Center the button */
+    margin-top: 20px; /* Add space above the submit button */
+    width: auto; /* Default width based on content */
+    max-width: 200px; /* Maximum width */
+}
+
+a button:hover, .button-style:hover, input[type=submit]:hover {
+    background-color: #89b09c;
+}
+
+.journal-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between notes */
+    margin-top: 20px;
+}
+
+.journal-entry {
+    background-color: #c8e6c9; /* Light sage green for sticky notes */
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    border-radius: 10px;
+    overflow: auto;
+    word-wrap: break-word;
+    font-size: 0.9em; /* Slightly smaller font size */
+    position: relative; /* Needed for absolute positioning of the button */
+}
+
+.delete-btn {
+    background: #f8c6d1; /* Pastel pink background for visibility */
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px; /* Move to the top */
+    right: 10px; /* Place it on the right corner */
+    border: none;
+    font-size: 20px;
+    z-index: 2; /* Ensure it's above other content */
+}
+
+.delete-btn:hover {
+    background-color: #e09fa7;
+}
+
+.delete-form {
+    margin: 0; /* Remove any default margin */
+}
+
+/* index.html and loading.html */
+#typing-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#container1 {
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+}
+
+.typing {
+    font-size: 10vw;
+    color: #5a836e;
+    border-right: 3px solid #5a836e; /* Sage green cursor simulation */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 2.5s steps(12) 0.2s 1, blink-caret .5s step-end 6 forwards;
+    animation-fill-mode: forwards;
+}
+
+.typing1 {
+    font-size: 5vw;
+    border-right: 3px solid #5a836e; /* Sage green cursor simulation */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing1 3s steps(12) 0.2s 1, blink-caret .5s step-end 8 forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 14ch; } /* Adjusted to the actual character count */
+}
+
+@keyframes typing1 {
+    from { width: 0; }
+    to { width: 11ch; } /* Adjusted to the actual character count */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+
+/* grounding.html */
+#submit-btn {
+    background-color: #a1c9af; /* Muted sage green button */
+    color: white; /* White text for contrast */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Adequate padding for comfort */
+    margin: 5px; /* Margin around buttons */
+    border-radius: 5px; /* Rounded corners for a softer look */
+    cursor: pointer; /* Cursor changes to indicate it's clickable */
+    font-family: Arial, sans-serif; /* Consistent font with the theme */
+    font-size: 1em; /* Adequate text size */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#submit-btn:hover {
+    background-color: #89b09c; /* Slightly darker shade for hover state */
+} 
+
+.custom-text-field {
+    width: 600px; /* Adjusted width */
+    padding: 8px; /* Adjusted padding */
+    margin: 8px; /* Adjusted margin */
+    border: 2px solid #5a836e;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.hotlines {
+    text-align: left;
+    margin-top: 10px;
+    padding: 20px;
+ }
+ 
+ 
+ table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+ }
+ 
+ 
+ tr {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #c5e0ce;
+    margin-bottom: 15px; /* Adjust the margin as needed */
+    margin-top: 15px;
+ }
+ 
+ 
+ td {
+    padding: 10px;
+    display: block;
+ 
+ 
+ }
+ 
+ 
+ .button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    background-color: #a1c9af;
+    cursor: pointer;
+    border-radius: 8px;
+    display: inline-block;
+ }
+
+/* New class for text field container */
+.text-field-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.custom-text-field:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #89b09c; /* Change border color on focus */
+}
+
+
+/* doodling.html */
+
+/* Button Hover State */
+.doodlebuttons {
+    background-color: #C7E4D8; /* Muted sage green button */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block; /* Use inline-block to make the label inline with the input */
+    margin: 5px; /* Margin around buttons */
+    font-family: Arial, sans-serif; /* Consistent font with the theme */
+    font-size: 16px; /* Adjust the font size as needed */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    margin-top: 10px; /* Add a bottom margin of 10px */
+    margin-bottom: 10px; /* Add a bottom margin of 10px */
+
+}
+
+/* Hover effect for buttons */
+
+#drawing-board {
+    text-align: center;
+}
+
+canvas {
+    border: 2px solid #000;
+}
+
+.drawing {
+    margin: 10px;
 }

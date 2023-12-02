@@ -1,34 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Journaling</title>
-    <link rel="stylesheet" type="text/css" href="static\journaling.css">
-</head>
+{% extends "layout.html" %}
 
-<body>
-    <a href="/homepage">
-        <h1>serenityspace</h1>
-    </a>
-    <a href="/breathing">
-        <button type="button">breathing</button>
-    </a>
-    <a href="/grounding">
-        <button type="button">grounding</button>
-    </a>
-    <a href="/journaling">
-        <button type="button">journaling</button>
-    </a>
-    <a href="/doodling">
-        <button type="button">doodling</button>
-    </a>
-    <a href="/educational-resources">
-        <button type="button">resources</button>
-    </a>
+{% block title %}
+    Journaling
+{% endblock %}
+
+{% block body %}
 
     <h1>journaling</h1>
     <h5>express your thoughts freely here...  </h5>
-    
-    
 
     <!-- Journaling Form -->
     <form action="/submit_journal" method="post">
@@ -37,5 +16,4 @@
         <input type="submit" value="submit">
     </form>
     <a href="/journal-board" class="button-style">view journal board</a>
-</body>
-</html>
+{% endblock %}

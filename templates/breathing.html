@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="static\breathing.css">
-    <title>Breathing Exercise</title>
-</head>
+{% extends "layout.html" %}
 
-<body>
-    <a href="/homepage">
-        <h1>serenityspace</h1>
-    </a>
-    <a href="/breathing">
-        <button type="button">breathing</button>
-    </a>
-    <a href="/grounding">
-        <button type="button">grounding</button>
-    </a>
-    <a href="/journaling">
-        <button type="button">journaling</button>
-    </a>
-    <a href="/doodling">
-        <button type="button">doodling</button>
-    </a>
-    <a href="/educational-resources">
-        <button type="button">resources</button>
-    </a>
+{% block title %}
+    Breathing
+{% endblock %}
 
+{% block body %}
     <h1>breathing</h1>
     <h5>take a deep breath — in and out, in and out.</h5>
 
@@ -54,5 +33,4 @@
         // Initial call to start the loop
         setTimeout(changeBreatheMessage, 3000);
     </script>
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Doodling
+{% endblock %}
+
+{% block body %}
+<h1>my sketch book &lt;3</h1>
+    <a href="/doodling" class="button-style">back to doodling</a>
+    <div class="sketches-board">
+        {% for doodle in doodles %}
+            <div class="sketch-entry">
+                <canvas id="sketch{{ doodle.id }}"></canvas>
+            </div>
+        {% endfor %}
+    </div>
+    
+    
+    <div id="doodleData" style="display: none;">
+        {{ doodles | map(attribute='data') | list | tojson | safe }}
+    </div>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Retrieve the JSON data from the hidden div
+            var doodleDataElement = document.getElementById('doodleData');
+            var doodlesData = JSON.parse(doodleDataElement.textContent);
+            console.log(doodlesData); // Debugging: Log the parsed data
+            doodlesData.reverse(); // Reverse the order of doodlesData
+            doodlesData.forEach(function(doodleDataStr, index) {
+                if (doodleDataStr) {
+                    // Parse each individual doodle data string
+                    var doodleData = JSON.parse(doodleDataStr);
+                    console.log(doodleData); // Debugging: Log each doodle data
+    
+                    var canvas = document.getElementById('sketch' + (index + 1));
+                    if (!canvas) {
+                        console.error('Canvas not found for index:', index); // Debugging: Log if canvas not found
+                        return;
+                    }
+    
+                    var ctx = canvas.getContext('2d');
+                    canvas.width = 800;
+                    canvas.height = 500;
+    
+                    doodleData.forEach(function(line) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = line.color;
+                        ctx.moveTo(line.points[0].x, line.points[0].y);
+                        line.points.forEach(function(point) {
+                            ctx.lineTo(point.x, point.y);
+                        });
+                        ctx.stroke();
+                    });
+                }
+            });
+        });
+        
+    </script>
+{% endblock %}

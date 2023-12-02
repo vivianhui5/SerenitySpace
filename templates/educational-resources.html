@@ -1,29 +1,171 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="static\educational-resources.css">
-    <title>Grounding</title>
-</head>
-<body>
-    <a href="/homepage">
-        <h1>serenityspace</h1>
-    </a>
-    <a href="/breathing">
-        <button type="button">breathing</button>
-    </a>
-    <a href="/grounding">
-        <button type="button">grounding</button>
-    </a>
-    <a href="/journaling">
-        <button type="button">journaling</button>
-    </a>
-    <a href="/doodling">
-        <button type="button">doodling</button>
-    </a>
-    <a href="/educational-resources">
-        <button type="button">resources</button>
-    </a>
+{% extends "layout.html" %}
+
+{% block title %}
+    Resources
+{% endblock %}
+
+{% block body %}
     <h1>resources</h1>
-</body>
-</html>
+    <h5>you are not alone.</h5>
+
+    <div class="hotlines">
+        <table>
+                <tr>
+                    <h2>hotline resources</h2>
+                    <td>
+                        <b>mental health emergency hotline: 988</b>
+                    
+                            <a button class="button" onclick="callHotline(988)">call</a>
+                            <a button class="button" onclick="textHotline(988)">text</a>
+                        <br>
+                        connect with a crisis counselor anywhere in the united states
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>emergency: 911</b>
+                    
+                            <a button class="button" onclick="callHotline(911)">call</a>
+                            <a button class="button" onclick="textHotline(911)">text</a>
+                        <br>
+                        fastest way to get help if you or others are danger
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>national alliance on mental illness (nami): 1-800-950-NAMI, text HELPLINE to 62640</b>
+                        <a button class="button" onclick="callHotline(18009506264)">call</a>
+                        <a button class="button" onclick="textHotline(62640, 'HELPLINE')">text</a>
+                        <br>
+                        provides advocacy, education, support and public awareness, available 10 am - 10 pm est monday-friday
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>national domestic violence hotline: 1-800-799-7233, text START to 88788</b>
+                        <a button class="button" onclick="callHotline(18007997233)">call</a>
+                        <a button class="button" onclick="textHotline(88788, 'START')">text</a>
+                        <br>
+                        provides tools and support to domestic violence survivors 24/7/365
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>crisis text line: text REASON to 741741</b>
+                        <a button class="button" onclick="textHotline(741741, 'REASON')">text</a>
+                        <br>
+                        free 24/7 support for anything via text message
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>lgbtq hotline: 1-888-843-4564</b>
+                        <a button class="button" onclick="callHotline(18888434564)">call</a>
+                        <br>
+                        free and confidential safe space for supportive listening, available every day
+                    </td>
+                </tr>
+        </table>
+    
+        <table>
+                <tr>
+                    <br>
+                    <h2>educational resources:</h2>
+                    <td>
+                        <b>cdc mental health</b>
+                        <a class="button" href="https://www.cdc.gov/mentalhealth/learn/index.htm" target="_blank">website</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>national alliance on mental illness</b>
+                        <a class="button" href="https://www.nami.org/About-Mental-Illness/Mental-Health-Conditions" target="_blank">website</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>attention deficit hyperactivity disorder (adhd)</b>
+                        <a class="button" href="https://www.cdc.gov/ncbddd/adhd/facts.html#:~:text=ADHD%20is%20one%20of%20the,)%2C%20or%20be%20overly%20active." target="_blank">learn more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>bipolar disorder</b>
+                        <a class="button" href="https://www.nimh.nih.gov/health/topics/bipolar-disorder" target="_blank">bipolar disorder</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>borderline personality disorder (bpd)</b>
+                        <a class="button" href="https://www.nimh.nih.gov/health/topics/borderline-personality-disorder#:~:text=What%20is%20borderline%20personality%20disorder,impact%20their%20relationships%20with%20others." target="_blank">learn more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>anxiety disorder</b>
+                        <a class="button" href="https://www.psychiatry.org/patients-families/anxiety-disorders/what-are-anxiety-disorders#:~:text=Generalized%20anxiety%20disorder%20involves%20persistent,muscle%20tension%20or%20problems%20sleeping." target="_blank">learn more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>depression</b>
+                        <a class="button" href="https://www.nimh.nih.gov/health/topics/depression" target="_blank">learn more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>dissociative disorder</b>
+                        <a class="button" href="https://www.mayoclinic.org/diseases-conditions/dissociative-disorders/symptoms-causes/syc-20355215#:~:text=Dissociative%20disorders%20are%20mental%20health,problems%20in%20managing%20everyday%20life." target="_blank">learn more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>eating disorders</b>
+                        <a class="button" href="https://www.mayoclinic.org/diseases-conditions/eating-disorders/symptoms-causes/syc-20353603#:~:text=The%20most%20common%20eating%20disorders,the%20nutrition%20your%20body%20needs." target="_blank">learn more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>dissociative disorder</b>
+                        <a class="button" href="https://www.mayoclinic.org/diseases-conditions/dissociative-disorders/symptoms-causes/syc-20355215#:~:text=Dissociative%20disorders%20are%20mental%20health,problems%20in%20managing%20everyday%20life." target="_blank">learn more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>obsessive-compulsive disorder</b>
+                        <a class="button" href="https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd#:~:text=Obsessive%2Dcompulsive%20disorder%20(OCD),or%20interfere%20with%20daily%20life." target="_blank">learn more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>post traumatic stress disorder (ptsd)</b>
+                        <a class="button" href="https://www.samhsa.gov/mental-health/post-traumatic-stress-disorder#:~:text=Post%2Dtraumatic%20stress%20disorder%20(PTSD)%20is%20a%20real%20disorder,or%20severe%20injury%20has%20occurred." target="_blank">learn more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>psychosis</b>
+                        <a class="button" href="https://www.nimh.nih.gov/health/publications/understanding-psychosis#:~:text=Psychosis%20refers%20to%20a%20collection,real%20and%20what%20is%20not." target="_blank">learn more</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>schizophrenia</b>
+                        <a class="button" href="https://www.psychiatry.org/patients-families/schizophrenia/what-is-schizophrenia#:~:text=Schizophrenia%20is%20a%20chronic%20brain,thinking%20and%20lack%20of%20motivation." target="_blank">learn more</a>
+                    </td>
+                </tr>
+            
+        </table>
+    </div>
+
+
+    <script>
+        function callHotline(number) {
+            window.location.href = 'tel:+' + number;
+        }
+
+        function textHotline(number, message) {
+            window.location.href = 'sms:+' + number + '&body=' + encodeURIComponent(message);
+        }
+    </script>
+{% endblock %}
