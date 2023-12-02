@@ -19,18 +19,6 @@ class DoodleEntry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     data = db.Column(db.Text)  # Stores doodle data as JSON string
 
-def clear_doodle_entries():
-    """Clear all entries in the DoodleEntry table."""
-    try:
-        db.session.query(DoodleEntry).delete()
-        db.session.commit()
-    except Exception as e:
-        print("Error clearing DoodleEntry table:", e)
-        db.session.rollback()
-
-with app.app_context():
-    db.create_all()
-    clear_doodle_entries()  # Clear the table when the app starts
 
 
 with app.app_context():
