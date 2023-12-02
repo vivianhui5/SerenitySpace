@@ -283,6 +283,13 @@ a button:hover, .button-style:hover, input[type=submit]:hover {
     margin-top: 10px;
     padding: 20px;
  }
+
+ .grounding {
+    text-align: center;
+    width: 60%;
+    margin: 10px auto;
+    padding: 40px;
+ }
  
  
  table {
