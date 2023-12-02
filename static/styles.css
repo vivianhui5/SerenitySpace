@@ -197,6 +197,7 @@ a button:hover, .button-style:hover, input[type=submit]:hover {
     margin: 0; /* Remove any default margin */
 }
 
+
 /* index.html and loading.html */
 #typing-container {
     display: flex;
