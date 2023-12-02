@@ -197,6 +197,7 @@ a button:hover, .button-style:hover, input[type=submit]:hover {
     margin: 0; /* Remove any default margin */
 }
 
+
 /* index.html and loading.html */
 #typing-container {
     display: flex;
@@ -289,7 +290,7 @@ a button:hover, .button-style:hover, input[type=submit]:hover {
     text-align: center;
     width: 60%;
     margin: 10px auto;
-    padding: 40px;
+    padding: 15px;
  }
  
  
@@ -312,8 +313,6 @@ a button:hover, .button-style:hover, input[type=submit]:hover {
  td {
     padding: 10px;
     display: block;
- 
- 
  }
  
  

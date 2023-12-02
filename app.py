@@ -19,7 +19,10 @@ class DoodleEntry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     data = db.Column(db.Text)  # Stores doodle data as JSON string
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2c34fb33cc71e034197c487710b0df8325ba2572
 
 with app.app_context():
     db.create_all()
