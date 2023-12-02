@@ -391,5 +391,5 @@ canvas {
 
 .inline-label {
     margin-right: 10px;
-
+    flex-direction: row;
 }
