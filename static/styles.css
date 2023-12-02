@@ -151,11 +151,13 @@ a button:hover, .button-style:hover, input[type=submit]:hover {
 
 .journal-board {
     display: flex;
+    flex-direction: row; /* Set the flex direction to row */
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start; /* Align items to the left */
     gap: 20px; /* Space between notes */
     margin-top: 20px;
 }
+
 
 .journal-entry {
     background-color: #c8e6c9; /* Light sage green for sticky notes */
