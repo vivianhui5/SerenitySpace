@@ -8,12 +8,15 @@
     <h1>doodling</h1>
     <h5> let your creativity flow! </h5>
     <div class="container">
+        <a href="/sketches">
+            <button type="button">see my sketches!</button>
+        </a>
         <label for="colorPicker" class="button-style">Pen Color:</label>
         <input type="color" id="colorPicker" value="#000000">
     </div>
     
     <button id="undoButton" class="doodlebuttons">undo</button>
-    <button id="saveButton" class="doodlebuttons">i'm done!</button>
+    <button id="saveButton" class="doodlebuttons">submit</button>
     
     <div class="container">
         <div id="canvas-container">
@@ -29,7 +32,7 @@
             var lines = [];
             var currentLine = [];
             var penColor = '#000000'; // Default pen color
-    
+
             // Set the initial size of the canvas
             canvas.width = 800;
             canvas.height = 500;
@@ -107,34 +110,37 @@
             }
     
             function redraw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+                // Set canvas background to white
+                ctx.fillStyle = '#FFFFFF'; // White color
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
                 ctx.lineWidth = 2;
                 ctx.lineCap = 'round';
-    
+
                 lines.forEach(line => {
                     if (line.points.length >= 2) {
                         ctx.beginPath();
                         ctx.strokeStyle = line.color;
                         ctx.moveTo(line.points[0].x, line.points[0].y);
-    
+
                         for (var i = 0; i < line.points.length; i++) {
                             ctx.lineTo(line.points[i].x, line.points[i].y);
                         }
-    
+
                         ctx.stroke();
                     }
                 });
-    
+
                 // Draw the current line (if any)
                 if (currentLine.length >= 2) {
                     ctx.beginPath();
                     ctx.strokeStyle = penColor;
                     ctx.moveTo(currentLine[0].x, currentLine[0].y);
-    
+
                     for (var i = 0; i < currentLine.length; i++) {
                         ctx.lineTo(currentLine[i].x, currentLine[i].y);
                     }
-    
+
                     ctx.stroke();
                 }
             }
