@@ -103,9 +103,7 @@ def submit_doodle():
     new_doodle = DoodleEntry(data=doodle_data)
     db.session.add(new_doodle)
     db.session.commit()
-    print("hi")
     return redirect(url_for('sketches'))
-
 
 @app.route('/sketches')
 def sketches():

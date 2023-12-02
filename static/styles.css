@@ -340,13 +340,11 @@ a button:hover, .button-style:hover, input[type=submit]:hover {
     border-color: #89b09c; /* Change border color on focus */
 }
 
-
 /* doodling.html */
-
 /* Button Hover State */
 .doodlebuttons {
-    background-color: #C7E4D8; /* Muted sage green button */
-    color: rgb(0, 0, 0);
+    background-color: #a1c9af; /* Muted sage green button */
+    color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -362,14 +360,22 @@ a button:hover, .button-style:hover, input[type=submit]:hover {
 
 }
 
-/* Hover effect for buttons */
-
-#drawing-board {
-    text-align: center;
-}
+.submit-btn:hover {
+    background-color: #89b09c; /* Slightly darker shade for hover state */
+} 
 
 canvas {
-    border: 2px solid #000;
+    background-color: #ffffff; /* White background for the canvas */
+    border: 4px solid #89b09c; /* Add a border to each canvas */
+    border-radius: 10px;
+}
+
+.sketches-board {
+    margin: 25px;
+}
+
+.sketch-entry {
+    margin-bottom: 20px; /* Add margin to each sketch entry */
 }
 
 .drawing {
