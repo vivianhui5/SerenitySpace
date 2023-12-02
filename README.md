@@ -14,7 +14,7 @@ serenityspace is a mental health website with breathing, grounding, journaling, 
 
 # installation
 
-1. Clone the repository: https://github.com/vivianhui5/SerenitySpace/commits/main
+1. Clone the repository: https://github.com/vivianhui5/SerenitySpace.git
 2. Navigate to the folder: cd SerenitySpace
 3. run the project in terminal via “flask run”
 
