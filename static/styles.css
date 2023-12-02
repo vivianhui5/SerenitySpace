@@ -357,6 +357,7 @@ a button:hover, .button-style:hover, input[type=submit]:hover {
     transition: background-color 0.3s; /* Smooth transition for hover effect */
     margin-top: 10px; /* Add a bottom margin of 10px */
     margin-bottom: 10px; /* Add a bottom margin of 10px */
+    flex-direction: row;
 
 }
 
@@ -380,4 +381,14 @@ canvas {
 
 .drawing {
     margin: 10px;
+}
+
+.color-picker-container {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
+.inline-label {
+    margin-right: 10px;
 }

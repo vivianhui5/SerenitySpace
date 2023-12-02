@@ -11,13 +11,18 @@
         <a href="/sketches">
             <button type="button">see my sketches!</button>
         </a>
-        <label for="colorPicker" class="button-style">Pen Color:</label>
-        <input type="color" id="colorPicker" value="#000000">
+    
+        <div class="color-picker-container">
+            <label for="colorPicker" class="button-style inline-label">Pen Color:</label>
+            <input type="color" id="colorPicker" value="#000000">
+        </div>
     </div>
-    
-    <button id="undoButton" class="doodlebuttons">undo</button>
-    <button id="saveButton" class="doodlebuttons">submit</button>
-    
+
+    <div class="container">
+        <button id="undoButton" class="doodlebuttons">undo</button>
+        <button id="saveButton" class="doodlebuttons">submit</button>
+    </div>
+
     <div class="container">
         <div id="canvas-container">
             <canvas id="canvas" width="800" height="500"></canvas>
