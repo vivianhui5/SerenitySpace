@@ -27,17 +27,15 @@
             // Retrieve the JSON data from the hidden div
             var doodleDataElement = document.getElementById('doodleData');
             var doodlesData = JSON.parse(doodleDataElement.textContent);
-            console.log(doodlesData); // Debugging: Log the parsed data
+            
             doodlesData.reverse(); // Reverse the order of doodlesData
             doodlesData.forEach(function(doodleDataStr, index) {
                 if (doodleDataStr) {
                     // Parse each individual doodle data string
                     var doodleData = JSON.parse(doodleDataStr);
-                    console.log(doodleData); // Debugging: Log each doodle data
-    
                     var canvas = document.getElementById('sketch' + (index + 1));
                     if (!canvas) {
-                        console.error('Canvas not found for index:', index); // Debugging: Log if canvas not found
+                        console.error('Canvas not found for index:', index); // Log if canvas not found
                         return;
                     }
     
