@@ -52,7 +52,7 @@ def grounding():
         response4 = request.form.get("smell")
         response5 = request.form.get("taste")
         # Render response template with form data
-        return render_template("grounded.html", response1=response1, response2=response2, response3=response3, response4=response5, response5=response5)
+        return render_template("grounded.html", response1=response1, response2=response2, response3=response3, response4=response4, response5=response5)
     else:
         return render_template('grounding.html')
 
