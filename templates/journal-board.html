@@ -6,16 +6,16 @@
 
 {% block body %}
     <h1>journal board</h1>
+    <!-- Loop for displaying journal entries -->
     <div class="journal-board">
         {% for entry in entries %}
-            <!-- Inside your loop for journal entries -->
+            <!-- Loop for displaying journal entries -->
             <div class="journal-entry">
                 <form action="{{ url_for('delete_journal', entry_id=entry.id) }}" method="post" class="delete-form">
                     <button type="submit" class="delete-btn" title="Delete Entry">🗑️</button>
                 </form>
                 <p>{{ entry.entry }}</p>
             </div>
-
         {% endfor %}
     </div>
     <a href="/journaling" class="button-style">back to journaling</a>

@@ -14,10 +14,13 @@
         </div>
     </div>
 
+    <!-- JavaScript to toggle the breathing message between "breathe in" and "breathe out" -->
     <script>
+        // Function to toggle the breathing message
         function toggleBreatheMessage() {
             const breatheMessage = document.querySelector('.breathe-message');
 
+            // Change text between 'breathe in' and 'breathe out'
             if (breatheMessage.innerText === 'breathe in') {
                 breatheMessage.innerText = 'breathe out';
             } else {
@@ -25,12 +28,13 @@
             }
         }
 
+        // Function to change the breathing message every 3 seconds
         function changeBreatheMessage() {
             toggleBreatheMessage();
             setTimeout(changeBreatheMessage, 3000); // Change every 3 seconds
         }
 
-        // Initial call to start the loop
+        // Initial call to start the loop of changing messages
         setTimeout(changeBreatheMessage, 3000);
     </script>
 {% endblock %}

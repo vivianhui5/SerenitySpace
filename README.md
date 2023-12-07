@@ -7,6 +7,7 @@ Welcome to serenityspace!
 - [overview](#overview)
 - [installation](#installation)
 - [usage](#usage)
+- [short video](#shortvideo)
 
 # overview
 
@@ -31,3 +32,6 @@ On the journaling page, you can type into the entry field and submit it to the j
 In the doodling page, you can choose a pen color and draw on a canvas. There are also buttons to see past sketches (“see my sketches”), undo a stroke (“undo”), and submit your drawing to the gallery of sketches (“submit”).
 
 The resources page offers hotlines and educational resources. You can text and call these hotlines via pressing the buttons listed next to each resource. You can also learn more about each disorder by clicking the “website” or “learn more” button listed next to each disorder as well.
+
+# short video
+url: https://youtu.be/-bOGjH_Z4As?si=HXYaXekfowpsJc-Z

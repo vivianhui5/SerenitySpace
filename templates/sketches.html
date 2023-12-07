@@ -1,3 +1,4 @@
+<!-- Extend the base layout template -->
 {% extends "layout.html" %}
 
 {% block title %}
@@ -5,10 +6,16 @@
 {% endblock %}
 
 {% block body %}
+    
     <h1>my sketch book &lt;3</h1>
     <h5>a collection of my favorite drawings~</h5>
+
+    <!-- Link to go back to the doodling page -->
     <a href="/doodling" class="button-style">back to doodling</a>
+
+    <!-- Container for displaying sketches -->
     <div class="sketches-board">
+        <!-- Loop through each doodle and create a canvas for it -->
         {% for doodle in doodles %}
             <div class="sketch-entry">
                 <canvas id="sketch{{ doodle.id }}"></canvas>
@@ -16,29 +23,32 @@
         {% endfor %}
     </div>
     
-    
+    <!-- Hidden div to store JSON data of doodles -->
     <div id="doodleData" style="display: none;">
         {{ doodles | map(attribute='data') | list | tojson | safe }}
     </div>
 
-    
+    <!-- JavaScript to render sketches on the canvas elements -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Retrieve the JSON data from the hidden div
+            // Retrieve JSON data from the hidden div
             var doodleDataElement = document.getElementById('doodleData');
             var doodlesData = JSON.parse(doodleDataElement.textContent);
             
-            doodlesData.reverse(); // Reverse the order of doodlesData
+            // Reverse the order of the doodles
+            doodlesData.reverse(); 
             doodlesData.forEach(function(doodleDataStr, index) {
                 if (doodleDataStr) {
                     // Parse each individual doodle data string
                     var doodleData = JSON.parse(doodleDataStr);
                     var canvas = document.getElementById('sketch' + (index + 1));
                     if (!canvas) {
-                        console.error('Canvas not found for index:', index); // Log if canvas not found
+                        // Error handling if canvas not found
+                        console.error('Canvas not found for index:', index);
                         return;
                     }
     
+                    // Setup and render each line of the doodle on the canvas
                     var ctx = canvas.getContext('2d');
                     canvas.width = 800;
                     canvas.height = 500;
@@ -55,6 +65,5 @@
                 }
             });
         });
-        
     </script>
 {% endblock %}

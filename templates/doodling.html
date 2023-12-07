@@ -7,6 +7,8 @@
 {% block body %}
     <h1>doodling</h1>
     <h5> let your creativity flow! </h5>
+
+    <!-- Container for doodling tools and navigation button -->
     <div class="container">
         <a href="/sketches">
             <button type="button">see my sketches!</button>
@@ -18,17 +20,20 @@
         
     </div>
 
+    <!-- Container for undo and submit buttons -->
     <div class="container inline-label">
         <button id="undoButton" class="doodlebuttons">undo</button>
         <button id="saveButton" class="doodlebuttons">submit</button>
     </div>
 
+    <!-- Canvas area for doodling -->
     <div class="container">
         <div id="canvas-container">
             <canvas id="canvas" width="800" height="500"></canvas>
         </div>
     </div>
     
+    <!-- JavaScript for handling doodling functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var canvas = document.getElementById('canvas');
